@@ -13,12 +13,6 @@ Resources:
       MemorySize: 128
       Timeout: 30
       Role: 'arn:aws:iam::228273668700:role/service-role/index-photos-role-idi5k35j'
-      Events:
-        getAZsAPI:
-          Type: Api
-          Properties:
-            Path: /getazs
-            Method: get
       Environment:
         Variables:
           REGION: us-west-2
@@ -34,12 +28,6 @@ Resources:
       MemorySize: 128
       Timeout: 30
       Role: 'arn:aws:iam::228273668700:role/service-role/hw2-get-imgs-role-901fuc9p'
-      Events:
-        getAZsAPI:
-          Type: Api
-          Properties:
-            Path: /getazs
-            Method: get
       Environment:
         Variables:
           REGION: us-west-2
