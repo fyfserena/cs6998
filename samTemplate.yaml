@@ -5,10 +5,10 @@ Resources:
   indexPhotoLambda:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: LFX1
+      FunctionName: hw2-index-photos
       Handler: lambda_function.lambda_handler
       Runtime: python3.6
-      CodeUri: ./LambdaCode
+      CodeUri: ./index-photos-a2a2dfed-650e-40f7-94df-3722ead0e51e
       Description: 'Lambda function for indexing photo'
       MemorySize: 128
       Timeout: 30
@@ -26,10 +26,10 @@ Resources:
   getPhotoLambda:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: LFX2
+      FunctionName: hw2-get-imgs
       Handler: lambda_function.lambda_handler
-      Runtime: python3.6
-      CodeUri: ./LambdaCode
+      Runtime: python3.7
+      CodeUri: ./hw2-get-imgs-ee3bce15-2613-452e-a059-7c4e7c5e9d08
       Description: 'Lambda function for geting photo'
       MemorySize: 128
       Timeout: 30
