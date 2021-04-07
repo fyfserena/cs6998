@@ -33,7 +33,7 @@ def search(keys):
         for r in r["hits"]["hits"]:
             objKey = r['_source']['objectKey']
             # bucket = r["'_source'"]['bucket']
-            results.append("https://cs6998-hw2.s3-us-west-2.amazonaws.com/" + objKey)
+            results.append("https://cs6998-hw2-imgs-clf.s3-us-west-2.amazonaws.com/" + objKey)
 
     return results
     
