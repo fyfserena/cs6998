@@ -31,3 +31,4 @@ Resources:
       Environment:
         Variables:
           REGION: us-west-2
+
