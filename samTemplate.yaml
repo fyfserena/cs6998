@@ -32,12 +32,12 @@ Resources:
         Variables:
           REGION: us-west-2
 
-  ConfigLambdaPermission:
-    Type: "AWS::Lambda::Permission"
-    DependsOn:
-    - AI Photo Search
-    - getPhotoLambda
-    Properties:
-      Action: lambda:InvokeFunction
-      FunctionName: !Ref getPhotoLambda
-      Principal: apigateway.amazonaws.com
+  # ConfigLambdaPermission:
+  #   Type: "AWS::Lambda::Permission"
+  #   DependsOn:
+  #   - AI Photo Search
+  #   - getPhotoLambda
+  #   Properties:
+  #     Action: lambda:InvokeFunction
+  #     FunctionName: !Ref getPhotoLambda
+  #     Principal: apigateway.amazonaws.com
