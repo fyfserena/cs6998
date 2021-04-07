@@ -32,7 +32,7 @@ Resources:
         Variables:
           REGION: us-west-2
 
-    ConfigLambdaPermission:
+  ConfigLambdaPermission:
     Type: "AWS::Lambda::Permission"
     DependsOn:
     - AI Photo Search
