@@ -39,12 +39,18 @@ def search(keys):
     
     
 def lambda_handler(event, context):
-    query = event['queryStringParameters']['q']
-    qLst = query.lower().split(' ')
-    andIdx = sum([i if qLst[i] == 'and' else 0 for i in range(len(qLst))])
-    qLstClean = [qLst[andIdx-1], qLst[andIdx+1]] if andIdx else [qLst[-1]]
-    qLstClean = [word[:-1] if word[-1] =='s' else word for word in qLstClean]
-    urls = search(qLstClean)
+    query = event['queryStringParameters'].get("q")
+    urls = []
+    if not query: 
+        urls = []
+    else:
+        qLst = query.lower().split(' ')
+        andIdx = sum([i if qLst[i] == 'and' else 0 for i in range(len(qLst))])
+        qLstClean = [qLst[andIdx-1], qLst[andIdx+1]] if andIdx else [qLst[-1]]
+        qLstClean = [word[:-1] if word[-1] =='s' else word for word in qLstClean]
+        urls = search(qLstClean)
+
+    
     response = {
             'statusCode': 200,
             'headers': {
