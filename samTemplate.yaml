@@ -1,46 +1,3 @@
-# AWSTemplateFormatVersion: '2010-09-09'
-# Transform: 'AWS::Serverless-2016-10-31'
-# Description: Photo Search
-
-# Resources:
-#   hw2IndexPhotos:
-#     Type: 'AWS::Lambda::Function'
-#     Properties:
-#       CodeUri: ./index-photos-a2a2dfed-650e-40f7-94df-3722ead0e51e
-#       Handler: lambda_function.lambda_handler
-#       Runtime: python3.7
-#       Description: ''
-#       MemorySize: 128
-#       Environment:
-#         Variables:
-#           REGION: 'us-west-2'
-#       Timeout: 3
-#       Role: >-
-#         arn:aws:iam::228273668700:role/service-role/index-photos-role-idi5k35j
-#       Layers:
-#         - >-
-#           arn:aws:lambda:us-west-2:228273668700:layer:ElasticLayer:2
-
-#   hw2GetImgs:
-#     Type: 'AWS::Lambda::Function'
-#     Properties:
-#       CodeUri: ./hw2-get-imgs-ee3bce15-2613-452e-a059-7c4e7c5e9d08
-#       Handler: lambda_function.lambda_handler
-#       Runtime: python3.7
-#       Description: ''
-#       MemorySize: 128
-#       Environment:
-#         Variables:
-#           REGION: 'us-west-2'
-#       Timeout: 3
-#       Role: >-
-#         arn:aws:iam::228273668700:role/service-role/hw2-get-imgs-role-901fuc9p
-
-#       Layers:
-#         - >-
-#           arn:aws:lambda:us-west-2:228273668700:layer:ElasticLayer:2
-
-
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: hw2 lambda
@@ -74,13 +31,3 @@ Resources:
       Environment:
         Variables:
           REGION: us-west-2
-
-  # ConfigLambdaPermission:
-  #   Type: "AWS::Lambda::Permission"
-  #   DependsOn:
-  #   - AI Photo Search
-  #   - getPhotoLambda
-  #   Properties:
-  #     Action: lambda:InvokeFunction
-  #     FunctionName: !Ref getPhotoLambda
-  #     Principal: apigateway.amazonaws.com
